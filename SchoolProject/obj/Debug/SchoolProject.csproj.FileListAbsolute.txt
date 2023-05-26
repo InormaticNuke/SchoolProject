@@ -1,0 +1,2 @@
+C:\Users\Infor\source\repos\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.AssemblyReference.cache
+C:\Users\Infor\source\repos\SchoolProject\SchoolProject\obj\Debug\SchoolProject.csproj.CoreCompileInputs.cache
