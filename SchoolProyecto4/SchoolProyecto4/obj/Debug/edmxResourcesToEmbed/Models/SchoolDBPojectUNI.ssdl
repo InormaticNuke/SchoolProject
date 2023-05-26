@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchoolProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="int" Nullable="false" />
+    <Property Name="NombreCargo" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Colegio">
+    <Key>
+      <PropertyRef Name="IdColegio" />
+    </Key>
+    <Property Name="IdColegio" Type="int" Nullable="false" />
+    <Property Name="NombreColegio" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="IdComuna" Type="int" />
+    <Property Name="IdCargo" Type="int" />
+  </EntityType>
+  <EntityType Name="Comuna">
+    <Key>
+      <PropertyRef Name="IdComuna" />
+    </Key>
+    <Property Name="IdComuna" Type="int" Nullable="false" />
+    <Property Name="NombreComuna" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Rut" />
+    </Key>
+    <Property Name="Rut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SalasColegio">
+    <Key>
+      <PropertyRef Name="IdSala" />
+    </Key>
+    <Property Name="IdSala" Type="int" Nullable="false" />
+    <Property Name="TipoSala" Type="varchar" MaxLength="20" />
+    <Property Name="NombreSala" Type="varchar" MaxLength="50" />
+    <Property Name="Capacidad" Type="int" />
+    <Property Name="IdColegio" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Rut" />
+    </Key>
+    <Property Name="Rut" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NombreTrabajador" Type="varchar" MaxLength="50" />
+    <Property Name="IdCargo" Type="int" />
+  </EntityType>
+  <Association Name="FK__Colegio__IdCargo__412EB0B6">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+    <End Role="Colegio" Type="Self.Colegio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Colegio">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Colegio__IdComun__403A8C7D">
+    <End Role="Comuna" Type="Self.Comuna" Multiplicity="0..1" />
+    <End Role="Colegio" Type="Self.Colegio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comuna">
+        <PropertyRef Name="IdComuna" />
+      </Principal>
+      <Dependent Role="Colegio">
+        <PropertyRef Name="IdComuna" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SalasCole__IdCol__440B1D61">
+    <End Role="Colegio" Type="Self.Colegio" Multiplicity="0..1" />
+    <End Role="SalasColegio" Type="Self.SalasColegio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colegio">
+        <PropertyRef Name="IdColegio" />
+      </Principal>
+      <Dependent Role="SalasColegio">
+        <PropertyRef Name="IdColegio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__IdCargo__3D5E1FD2">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SchoolProjectModelStoreContainer">
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colegio" EntityType="Self.Colegio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comuna" EntityType="Self.Comuna" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalasColegio" EntityType="Self.SalasColegio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Colegio__IdCargo__412EB0B6" Association="Self.FK__Colegio__IdCargo__412EB0B6">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Colegio" EntitySet="Colegio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Colegio__IdComun__403A8C7D" Association="Self.FK__Colegio__IdComun__403A8C7D">
+      <End Role="Comuna" EntitySet="Comuna" />
+      <End Role="Colegio" EntitySet="Colegio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SalasCole__IdCol__440B1D61" Association="Self.FK__SalasCole__IdCol__440B1D61">
+      <End Role="Colegio" EntitySet="Colegio" />
+      <End Role="SalasColegio" EntitySet="SalasColegio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__IdCargo__3D5E1FD2" Association="Self.FK__Usuario__IdCargo__3D5E1FD2">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

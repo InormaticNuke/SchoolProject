@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SchoolProjectModelStoreContainer" CdmEntityContainer="SchoolProjectEntities">
+    <EntitySetMapping Name="Cargoes">
+      <EntityTypeMapping TypeName="SchoolProjectModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+          <ScalarProperty Name="NombreCargo" ColumnName="NombreCargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colegios">
+      <EntityTypeMapping TypeName="SchoolProjectModel.Colegio">
+        <MappingFragment StoreEntitySet="Colegio">
+          <ScalarProperty Name="IdColegio" ColumnName="IdColegio" />
+          <ScalarProperty Name="NombreColegio" ColumnName="NombreColegio" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="IdComuna" ColumnName="IdComuna" />
+          <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comunas">
+      <EntityTypeMapping TypeName="SchoolProjectModel.Comuna">
+        <MappingFragment StoreEntitySet="Comuna">
+          <ScalarProperty Name="IdComuna" ColumnName="IdComuna" />
+          <ScalarProperty Name="NombreComuna" ColumnName="NombreComuna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="SchoolProjectModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalasColegios">
+      <EntityTypeMapping TypeName="SchoolProjectModel.SalasColegio">
+        <MappingFragment StoreEntitySet="SalasColegio">
+          <ScalarProperty Name="IdSala" ColumnName="IdSala" />
+          <ScalarProperty Name="TipoSala" ColumnName="TipoSala" />
+          <ScalarProperty Name="NombreSala" ColumnName="NombreSala" />
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+          <ScalarProperty Name="IdColegio" ColumnName="IdColegio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="SchoolProjectModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+          <ScalarProperty Name="NombreTrabajador" ColumnName="NombreTrabajador" />
+          <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

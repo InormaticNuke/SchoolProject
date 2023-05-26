@@ -1,0 +1,58 @@
+﻿@model SchoolProyecto4.Models.SchoolClassContext
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SchoolClassContext</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdColegio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdColegio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreColegio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreColegio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdComuna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdComuna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCargo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdColegio }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

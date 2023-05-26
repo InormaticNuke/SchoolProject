@@ -1,0 +1,2 @@
+C:\Users\Infor\source\repos\GitHub\SchoolProject\SchoolProyecto4\SchoolProyecto4\obj\Debug\SchoolProyecto4.csproj.AssemblyReference.cache
+C:\Users\Infor\source\repos\GitHub\SchoolProject\SchoolProyecto4\SchoolProyecto4\obj\Debug\SchoolProyecto4.csproj.CoreCompileInputs.cache

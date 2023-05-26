@@ -1,0 +1,29 @@
+﻿@model SchoolProyecto4.Models.Login
+
+@{
+    ViewBag.Title = "Validar";
+}
+
+<h2>Inicio de Sesion</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.Label("rut", "Ingrese el RUT:")
+        @Html.TextBox("rut")
+    </div>
+
+    <div>
+        @Html.Label("Ingrese la Contraseña:")
+        @Html.Password("pass")
+    </div>
+
+    <div>
+        <input type="submit" value="Acceder" />
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

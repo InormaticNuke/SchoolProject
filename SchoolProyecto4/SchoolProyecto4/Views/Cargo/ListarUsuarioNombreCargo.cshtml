@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SchoolProyecto4.Models.UsuarioContext>
+
+@{
+    ViewBag.Title = "ListarUsuarioNombreCargo";
+}
+
+<h2>ListarUsuarioNombreCargo</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreTrabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCargo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreTrabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCargo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NombreTrabajador }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NombreTrabajador }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NombreTrabajador })
+        </td>
+    </tr>
+}
+
+</table>
