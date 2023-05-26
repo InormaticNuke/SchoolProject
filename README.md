@@ -1,6 +1,12 @@
 # SchoolProject
  C# Project for my uni
 
+ **Work In Progress**
+
+ El codigo esta terminado en un 85% aproximado a la pauta de evaluacion debido a errores de compilacion.
+ Debido a la fecha de entrega del proyecto y la disposicion de tiempo no he logrado arreglar estos errores.
+ Quedara para una proxima iteracion.
+
  **PAUTA DE EVALUACION**
 
  l) Caso, Consideré el siguiente problema:
